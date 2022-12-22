@@ -31,7 +31,7 @@ function gotoPrev() {
 function gotoNext() {
   gotoNth(currentSlide + 1);
 }
-
+	
 function pause() {
   isPlaying = false;
   clearInterval(timerID);

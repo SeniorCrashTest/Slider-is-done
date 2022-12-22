@@ -54,10 +54,11 @@ a {
 	display: flex;
 	gap: 1em;
 	justify-content: center;
+	height: 20px;
 }
 
 .indicators {
-	margin: -40px 10px 0px;
+	margin: -80px 10px 0px;
 }
 
 .indicator,
