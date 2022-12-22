@@ -18,86 +18,87 @@ let swipeStartX = null;
 let swipeEndX = null;
 
 function gotoNth(n) {
-	slides[currentSlide].classList.toggle('active');
-	indicators[currentSlide].classList.toggle('active');
-	currentSlide = (n + SLIDES_COUNT) % SLIDES_COUNT;
-	slides[currentSlide].classList.toggle('active');
-	indicators[currentSlide].classList.toggle('active');
+  slides[currentSlide].classList.toggle('active');
+  indicators[currentSlide].classList.toggle('active');
+  currentSlide = (n + SLIDES_COUNT) % SLIDES_COUNT;
+  slides[currentSlide].classList.toggle('active');
+  indicators[currentSlide].classList.toggle('active');
 }
+
 function gotoPrev() {
-	gotoNth(currentSlide - 1);
+  gotoNth(currentSlide - 1);
 }
 function gotoNext() {
-	gotoNth(currentSlide + 1);
+  gotoNth(currentSlide + 1);
 }
 
 function pause() {
-	isPlaying = false;
-	clearInterval(timerID);
-	pauseBtn.innerHTML = 'Play';
+  isPlaying = false;
+  clearInterval(timerID);
+  pauseBtn.innerHTML = 'Play';
 }
 
 function play() {
-	isPlaying = true;
-	timerID = setInterval(gotoNext, 2000);
-	pauseBtn.innerHTML = 'Pause';
+  isPlaying = true;
+  timerID = setInterval(gotoNext, 4000);
+  pauseBtn.innerHTML = 'Pause';
 }
 
 function pausePlay() {
-	if (isPlaying) {
-		pause();
-	} else {
-		play();
-	}
+  if (isPlaying) {
+    pause();
+  } else {
+    play();
+  }
 }
 
 function prev() {
-	gotoPrev();
-	pause();
+  gotoPrev();
+  pause();
 }
 
 function next() {
-	gotoNext();
-	pause();
+  gotoNext();
+  pause();
 }
 
 function indicate(e) {
-	const target = e.target;
-	
-	if (target && target.classList.contains('indicator')) {
-		const dataSlide = +target.getAttribute('data-slide-to');
+  const target = e.target;
+  
+  if (target && target.classList.contains('indicator')) {
+    const dataSlide = +target.getAttribute('data-slide-to');
 
-		if (isNaN(dataSlide)) return;
-		gotoNth(dataSlide);
-	}
+    if (isNaN(dataSlide)) return;
+    gotoNth(dataSlide);
+  }
 }
 
 function pressKey(e) {
-	if (e.code === CODE_LEFT_ARROW) prev();
-	if (e.code === CODE_RIGHT_ARROW) next();
-	if (e.code === CODE_SPACE) pausePlay();
+  if (e.code === CODE_LEFT_ARROW) prev();
+  if (e.code === CODE_RIGHT_ARROW) next();
+  if (e.code === CODE_SPACE) pausePlay();
 }
 
 function swipeStart(e) {
-	swipeStartX = e.changedTouches[0].pageX;
+  swipeStartX = e.changedTouches[0].pageX;
 }
 
 function swipeEnd(e) {
-	swipeEndX = e.changedTouches[0].pageX;
-	if (swipeStartX - swipeEndX < -100) prev();
-	if (swipeStartX - swipeEndX > 100) next();
+  swipeEndX = e.changedTouches[0].pageX;
+  if (swipeStartX - swipeEndX < -100) prev();
+  if (swipeStartX - swipeEndX > 100) next();
 }
 
 function initListeners() {
-	pauseBtn.addEventListener('click', pausePlay);
-	prevBtn.addEventListener('click', prev);
-	nextBtn.addEventListener('click', next);
-	indicatorsContainer.addEventListener('click', indicate);
-	container.addEventListener('touchstart', swipeStart);
-	container.addEventListener('touchend', swipeEnd);
-	document.addEventListener('keydown', pressKey);	
+  pauseBtn.addEventListener('click', pausePlay);
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+  indicatorsContainer.addEventListener('click', indicate);
+  container.addEventListener('touchstart', swipeStart);
+  container.addEventListener('touchend', swipeEnd);
+  document.addEventListener('keydown', pressKey);  
 }
 
 initListeners();
 
-timerID = setInterval(gotoNext, 2000);
+timerID = setInterval(gotoNext, 4000);

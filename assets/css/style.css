@@ -1,3 +1,8 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: arial;
 	overflow-x: hidden;
@@ -5,6 +10,7 @@ body {
 
 .slides {
 	position: relative;
+	border: none;
 	height: 100vh;
 	padding: 0px;
 	margin: 0px;
@@ -12,9 +18,7 @@ body {
 }
 
 .slide {
-	background-position: 50% 50%;
 	background-size: cover;
-	font-size: 40px;
 	position: absolute;
 	left: 0px;
 	top: 0px;
@@ -30,34 +34,90 @@ body {
 	z-index: 1;
 }
 
+.slide {
+	box-sizing: border-box;
+	font-size: 40px;
+	padding: 40px;
+}
+
 a {
 	position: relative;
 	display: block;
+	height: 100vh;
 	text-decoration: none;
 }
 
-/* controls buttons*/
+/*---------------- controls buttons--------------------*/
+
 .indicators,
 .controls {
 	display: flex;
 	gap: 1em;
-	margin-bottom: 1em;
+	justify-content: center;
+}
+
+.indicators {
+	margin: -40px 10px 0px;
 }
 
 .indicator,
 .control {
 	display: block;
-	padding: 1em 2em;
-	background-color: #eeeeee;
+	background: none;
 	cursor: pointer;
 	user-select: none;
-	min-width: 60px;
+	min-width: 16px;
+	z-index: 3;
 }
 
-.control:hover {
-	background-color: #cccccc;
+.control-next,
+.control-prev,
+.control-pause {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	bottom: 0;
+}
+
+.indicator {
+	display: flex;
+	justify-content: center;
+	border: 2px solid white;
+	border-radius: 50%;
 }
 
 .indicator.active {
-	background-color: tomato;
+	box-shadow: 0 0 15px white;
+}
+
+.control-prev {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 10%;
+}
+
+.control-prev:hover {
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.010));
+}
+
+.control-next {
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 10%;
+}
+
+.control-next:hover {
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.010), rgba(0, 0, 0, 0.7));
+}
+
+.control-pause {
+	top: 45%;
+	left: 45%;
+	height: 10%;
+	min-width: 100px;
+	padding: 0;
 }
