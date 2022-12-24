@@ -119,6 +119,12 @@ a {
 	top: 45%;
 	left: 45%;
 	height: 10%;
-	min-width: 100px;
 	padding: 0;
+}
+
+.fa-pause,
+.fa-play {
+	min-width: 100px;
+	min-height: 100px;
+	z-index: 10;
 }
