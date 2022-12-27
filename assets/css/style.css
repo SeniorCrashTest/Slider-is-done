@@ -47,7 +47,7 @@ a {
 	text-decoration: none;
 }
 
-/*---------------- controls buttons--------------------*/
+/*-----------------------------------------------*/
 
 .indicators,
 .controls {
@@ -71,17 +71,6 @@ a {
 	z-index: 3;
 }
 
-.control-next,
-.control-prev,
-.control-pause {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	top: 0;
-	bottom: 0;
-}
-
 .indicator {
 	display: flex;
 	justify-content: center;
@@ -91,6 +80,19 @@ a {
 
 .indicator.active {
 	box-shadow: 0 0 15px white;
+}
+
+/*---------------- controls buttons--------------------*/
+
+.control-next,
+.control-prev,
+.control-pause {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	bottom: 0;
 }
 
 .control-prev {
@@ -115,12 +117,14 @@ a {
 	background: linear-gradient(to right, rgba(0, 0, 0, 0.010), rgba(0, 0, 0, 0.7));
 }
 
-.control-pause {
+.control-pause-play {
 	top: 45%;
 	left: 45%;
 	height: 10%;
 	padding: 0;
 }
+
+/*---------------- fonts awesome--------------------*/
 
 .fa-pause,
 .fa-play {
@@ -133,7 +137,6 @@ a {
 .fa-angle-right {
 	font-size: 35px;
 }
-
 
 .fa-angle-left,
 .fa-angle-right:hover {
