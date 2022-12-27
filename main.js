@@ -35,13 +35,13 @@ function gotoNext() {
 function pause() {
   isPlaying = false;
   clearInterval(timerID);
-  pauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+  pauseBtn.innerHTML = '<i class="fa fa-play"</i>';
 }
 
 function play() {
   isPlaying = true;
   timerID = setInterval(gotoNext, 4000);
-  pauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+  pauseBtn.innerHTML = '<i class="fa fa-pause"></i>';
 }
 
 function pausePlay() {
