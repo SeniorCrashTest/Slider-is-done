@@ -67,7 +67,7 @@ a {
 	background: none;
 	cursor: pointer;
 	user-select: none;
-	min-width: 16px;
+	/* min-width: 16px; */
 	z-index: 3;
 }
 
@@ -91,8 +91,6 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: 0;
-	bottom: 0;
 }
 
 .control-prev {
@@ -117,12 +115,12 @@ a {
 	background: linear-gradient(to right, rgba(0, 0, 0, 0.010), rgba(0, 0, 0, 0.7));
 }
 
-.control-pause-play {
-	top: 45%;
-	left: 45%;
-	height: 10%;
+/* .control-pause {
+	top: 50%;
+	left: 50%;
+	height: 0%;
 	padding: 0;
-}
+} */
 
 /*---------------- fonts awesome--------------------*/
 
