@@ -95,8 +95,11 @@ a {
 }
 
 .control-pause {
-	top: calc(50% - 15vh);
-	left: calc(50% - 15vh);
+	/* Вариант для расположения по центру как в примере */
+	/* top: calc(50% - 15vh); */
+	/* left: calc(50% - 15vh); */
+	top: 87%;
+	left: 67%;
 }
 
 .control-prev {
@@ -134,5 +137,5 @@ a {
 	color: rgba(255, 255, 255, 0.363);
 	text-align: center;
 	justify-content: center;
-	font-size: 30vh;
+	font-size: 10vh;
 }
